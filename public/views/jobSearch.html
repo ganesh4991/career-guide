@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html ng-app="jobSearch">
+<head>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<title>Career Guide</title>
+</head>
+<body>
+	<div class="container" ng-controller="JobSearchCtrl">
+		<h1 align="center">
+			Start your journey here!
+		</h1>
+		<div id="searchContainer" style="padding: 30 10 10 10;" align="center">
+			<input class= "form-control" type="text" id="search" name="search_box" style="display: inline; width: 300px;" placeholder="Enter your search here....">
+			<input class= "form-control" type="text" id="searchloc" name="search_box" style="display: inline; width: 300px;" placeholder="Enter your search here....">
+			<button class = "btn btn-primary" ng-click="search()" style="display: inline;" >Submit</button>
+		</div>
+		<div id="results" style="display: none;">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th style="width: 400px">Job Title</th>
+						<th style="width: 400px">Company</th>
+						<th style="width: 600px">Description</th>
+						<th style="width: 200px">Location</th>
+						<th style="width: 100px">Link</th>			
+					</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat="x in results">
+					<td style="width: 400px">{{ x.jobtitle}}</td>
+					<td style="width: 400px">{{ x.company }}</td>
+					<td style="width: 600px">{{ x.snippet }}</td>
+					<td style="width: 600px">{{ x.formattedLocation }}</td>
+					<td style="width: 100px"><a href="{{ x.url }}">Details</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src = "js/controllers/JobSearchCtrl.js"></script>
+</body>
+</html>

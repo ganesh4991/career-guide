@@ -6,6 +6,13 @@
         "font-awesome": "latest",
         "animate.css": "latest",
         "angular": "latest",
-        "angular-route": "latest"   
+        "angular-route": "latest",
+	    "angular": "latest",
+		"angular-resource": "latest",
+		"angular-cookies": "latest",
+		"angular-mocks": "latest",
+		"bootstrap": "latest",
+		"angular-bootstrap": "0.10.0",
+		"angular-ui-router": "#master"   
     }
 }
